@@ -4,26 +4,23 @@ import 'package:blog/app/auth/data/repoInterface/auth_repo_interface.dart';
 import 'package:blog/app/auth/domain/usecase/auth_repo_usecase.dart';
 // import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:provider/provider.dart';
+import 'package:provider/single_child_widget.dart';
 
-final authRemoteDatasourceProvider = Provider<AuthRemoteDatasource>(
-  create: (_) => AuthRemoteDatasource(),
-);
-final authRepoProvider = Provider<AuthRepoInterface>(
-  create: (context) =>
-      AuthRepoInterface(remoteDataSource: context.read<AuthRemoteDatasource>()),
-);
-final loginUseCaseProvider = Provider<LoginUseCase>(
-  create: (context) => LoginUseCase(context.read<AuthRepoInterface>()),
-);
+final authDataPoviders = [
+  Provider<AuthRemoteDatasource>(create: (_) => AuthRemoteDatasource()),
+  Provider<AuthRepoInterface>(
+    create: (context) => AuthRepoInterface(
+      remoteDataSource: context.read<AuthRemoteDatasource>(),
+    ),
+  ),
+];
 
-// final authRemoteDatasource = Provider((ref) {
-//   return AuthRemoteDatasource();
-// });
+final List<SingleChildWidget> authDomainProvider = [
+  Provider<LoginUseCase>(
+    create: (context) => LoginUseCase(context.read<AuthRepoInterface>()),
+  ),
+];
 
-// final authRepoProvider = Provider<AuthRepo>((ref) {
-//   return AuthRepoInterface(remoteDataSource: ref.watch(authRemoteDatasource));
-// });
+final List<SingleChildWidget> authBlocProviders =[
 
-// final loginUseCaseProvider = Provider((ref) {
-//   return LoginUseCase(ref.watch(authRepoProvider));
-// });
+];

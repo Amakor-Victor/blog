@@ -1,10 +1,20 @@
 import 'package:blog/app/routes/routers.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:provider/provider.dart';
+import 'package:blog/app/auth/presentation/providers/auth_providers.dart';
 
 void main() {
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(
+    MultiProvider(
+      providers: [
+        ...authDataPoviders,
+        ...authDomainProvider,
+        ...authBlocProviders,
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
