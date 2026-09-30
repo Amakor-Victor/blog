@@ -1,0 +1,20 @@
+###
+post http://localhost:8000/auth/register/
+Content-Type: application/json
+
+{
+    "username":"chidiebube",
+    "password":"victor1234",
+    "email":"victoramakor2@gmail.com",
+    "level":"1",
+    "department":"IT"
+}
+
+###
+POST http://localhost:8000/auth/login/ 
+Content-Type: application/json
+
+{
+    "username":"victor",
+    "password":"victor1234"
+}
