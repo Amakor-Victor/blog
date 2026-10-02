@@ -1,3 +1,4 @@
+import 'package:blog/app/shared/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -10,6 +11,9 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: const Center(child: const Text('Search screen'),),);
+    return const Scaffold(
+      appBar: CustomAppBar(pageTitle: 'Search'),
+      body: const Center(child: const Text('Search screen')),
+    );
   }
 }

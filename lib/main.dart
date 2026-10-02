@@ -1,3 +1,5 @@
+import 'package:blog/app/auth/presentation/providers/secure_storage_provider.dart';
+import 'package:blog/app/routes/presentation/providers/bottom_navigation_provider.dart';
 import 'package:blog/app/routes/routers.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +13,8 @@ void main() {
         ...authDataPoviders,
         ...authDomainProvider,
         ...authBlocProviders,
+        ...authSecureStorageProvider,
+        ...bottomNavigationBlocProvider,
       ],
       child: const MyApp(),
     ),
