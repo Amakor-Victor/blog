@@ -20,7 +20,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           const Duration(seconds: 2),
           () => emit(AuthSuccess(user: user)),
         );
-        
       } catch (e) {
         emit(AuthError(error: e.toString()));
       }

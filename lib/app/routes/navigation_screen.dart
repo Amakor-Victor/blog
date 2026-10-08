@@ -21,7 +21,6 @@ class _NavigationScreen extends State<NavigationScreen> {
     const SettingsScreen(),
   ];
   late final PageController _controller;
-  // int currentPage = 0;
   @override
   void initState() {
     _controller = PageController(initialPage: 0);
@@ -36,7 +35,6 @@ class _NavigationScreen extends State<NavigationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // final navBloc = BlocProvider.of<BottomNavigationBloc>(context);
 
     final navBloc = context.read<BottomNavigationBloc>();
 
@@ -53,11 +51,7 @@ class _NavigationScreen extends State<NavigationScreen> {
             currentIndex: state,
             onTap: (index) {
               navBloc.add(NavigateToCustomPageEvent(pageIndex: index));
-              // setState(() {
-              //   currentPage = index;
-              // });
-              // _controller.animateToPage(currentPage, duration: const Duration(milliseconds: 400), curve: Curves.bounceInOut);
-              _controller.jumpToPage(navBloc.state);
+              _controller.jumpToPage(state);
             },
             selectedItemColor: Colors.purple,
             unselectedItemColor: Colors.black,
