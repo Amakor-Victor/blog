@@ -17,8 +17,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: const CustomAppBar(pageTitle: 'Home'),
       body: Center(
-        child: Center(child: Text('Home page ${authState.user.id}')),
+        child: Center(child: Text('Home page ${authState.user.email}')),
       ),
     );
   }
 }
+

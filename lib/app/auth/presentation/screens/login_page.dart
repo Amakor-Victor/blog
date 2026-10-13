@@ -164,8 +164,13 @@ class _LoginPageState extends State<LoginPage> {
                               if (_emailController.text.isEmpty ||
                                   _passwordController.text.isEmpty) {
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
+                                  SnackBar(backgroundColor: Colors.red,
+                                    margin: .only(
+                                      bottom:
+                                          MediaQuery.of(context).size.height *0.95,
+                                    ),
                                     duration: Duration(seconds: 1),
+                                    behavior: .floating,
                                     content: Text('required field is empty'),
                                   ),
                                 );

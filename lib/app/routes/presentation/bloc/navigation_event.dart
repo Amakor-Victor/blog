@@ -8,3 +8,5 @@ class NavigateToCustomPageEvent extends NavigationEvent {
   final int pageIndex;
   const NavigateToCustomPageEvent({required this.pageIndex});
 }
+
+
