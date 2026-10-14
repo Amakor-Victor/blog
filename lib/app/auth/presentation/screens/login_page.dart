@@ -167,7 +167,7 @@ class _LoginPageState extends State<LoginPage> {
                                   SnackBar(backgroundColor: Colors.red,
                                     margin: .only(
                                       bottom:
-                                          MediaQuery.of(context).size.height *0.95,
+                                          MediaQuery.of(context).size.height*0.95,
                                     ),
                                     duration: const Duration(seconds: 1),
                                     behavior: .floating,

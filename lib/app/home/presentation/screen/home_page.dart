@@ -15,6 +15,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final authState = context.watch<AuthBloc>().state as AuthSuccess;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: const CustomAppBar(pageTitle: 'Home'),
       body: Center(
         child: Center(child: Text('Home page ${authState.user.email}')),
@@ -22,4 +23,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
