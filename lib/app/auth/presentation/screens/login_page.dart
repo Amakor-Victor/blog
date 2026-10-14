@@ -169,9 +169,9 @@ class _LoginPageState extends State<LoginPage> {
                                       bottom:
                                           MediaQuery.of(context).size.height *0.95,
                                     ),
-                                    duration: Duration(seconds: 1),
+                                    duration: const Duration(seconds: 1),
                                     behavior: .floating,
-                                    content: Text('required field is empty'),
+                                    content:const Text('required field is empty'),
                                   ),
                                 );
                               } else {
