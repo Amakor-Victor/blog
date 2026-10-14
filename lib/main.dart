@@ -1,24 +1,11 @@
-import 'package:blog/app/auth/presentation/providers/secure_storage_provider.dart';
-import 'package:blog/app/routes/presentation/providers/bottom_navigation_provider.dart';
+import 'package:blog/app/providers/allproviders.dart';
 import 'package:blog/app/routes/routers.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:blog/app/auth/presentation/providers/auth_providers.dart';
 
 void main() {
-  runApp(
-    MultiProvider(
-      providers: [
-        ...authDataPoviders,
-        ...authDomainProvider,
-        ...authBlocProviders,
-        ...authSecureStorageProvider,
-        ...bottomNavigationBlocProvider,
-      ],
-      child: const MyApp(),
-    ),
-  );
+  runApp(MultiProvider(providers: [...appProviders], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

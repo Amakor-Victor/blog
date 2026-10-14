@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
-List<SingleChildWidget> blogSourceProvider = [
+List<SingleChildWidget> blogDataProvider = [
   Provider<BlogRemoteDataSource>(create: (_) => BlogRemoteDataSource()),
   Provider<BlogRepo>(
     create: (context) => BlogRepoImpl(
